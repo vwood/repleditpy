@@ -23,3 +23,10 @@ def ed(name, g = globals()):
 	definition = tmp.read()
 	defined[name] = definition
 	exec definition in __main__.__dict__
+
+def dump(filename = "dump.py"):
+	f = open(filename, "w")
+	for definition in defined.itervalues():
+		f.write(definition)
+	f.close()
+
