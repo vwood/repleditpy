@@ -6,4 +6,5 @@ Edit Python functions and data structures in your favourite CLI editor from the 
 Current Status
 --------------
 
-Can define functions with ed("foo"). Variables can be defined but the skeleton is for a function.
+Can define functions with fed("foo"), and variables with ved("bar").
+Defined functions and variables can be dumped with dump().
