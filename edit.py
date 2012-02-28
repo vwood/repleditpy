@@ -49,7 +49,12 @@ def fed(name):
 def dump(filename = "dump.py"):
 	"""Dump definitions to a file."""
 	f = open(filename, "w")
+	f.write(boilerplate)
 	for definition in defined.itervalues():
+		if definition.startswith(boilerplate):
+			definition = definition.replace(boilerplate, "", 1)
 		f.write(definition)
+		if not definition.endswith('\n\n'):
+			f.write('\n')
 	f.close()
 
