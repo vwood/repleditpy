@@ -10,6 +10,7 @@ line_no = 5
 editor = os.environ.get('EDITOR', 'vim')
 
 def ed(name, g = globals()):
+	"""Edit a function definition in an editor."""
 	tmp = tempfile.NamedTemporaryFile()	
 	if defined.has_key(name):
 		tmp.write(defined[name])
@@ -25,6 +26,7 @@ def ed(name, g = globals()):
 	exec definition in __main__.__dict__
 
 def dump(filename = "dump.py"):
+	"""Dump definitions to a file."""
 	f = open(filename, "w")
 	for definition in defined.itervalues():
 		f.write(definition)
