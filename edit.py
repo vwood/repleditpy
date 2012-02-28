@@ -58,3 +58,11 @@ def dump(filename = "dump.py"):
 			f.write('\n')
 	f.close()
 
+def add_to_main(name, fn):
+	if not __main__.__dict__.has_key(name):
+		__main__.__dict__[name] = fn
+
+add_to_main("ved", ved)
+add_to_main("fed", fed)
+add_to_main("dump", dump)
+
